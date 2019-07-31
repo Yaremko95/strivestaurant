@@ -38,13 +38,22 @@ class MenuCarousel extends Component {
     this.setState({ activeIndex: newIndex });
   }
 
+  // handleCarouselClick = item => {
+  //   this.props.onDishSelected(item);
+  // };
+
   render() {
     const { activeIndex } = this.state;
 
     const slides = items.map(item => {
       return (
         <CarouselItem onExiting={this.onExiting} onExited={this.onExited} key={item.id}>
-          <img src={item.image} alt={item.name} />
+          <img
+            style={{ cursor: "pointer" }}
+            src={item.image}
+            alt={item.name}
+            onClick={() => this.props.onDishSelected(item)}
+          />
           <CarouselCaption captionText={item.description} captionHeader={item.name} />
         </CarouselItem>
       );
