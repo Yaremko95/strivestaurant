@@ -61,6 +61,7 @@ class MenuCarousel extends Component {
 
     return (
       <div className="container menuCarousel" style={{ maxWidth: 400, margin: "0 auto" }}>
+        {this.props.children}
         <Carousel activeIndex={activeIndex} next={this.next} previous={this.previous}>
           <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
           {slides}

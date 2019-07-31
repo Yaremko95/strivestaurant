@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import RestNavigation from "./RestNavigation";
 import MenuCarousel from "./MenuCarousel";
 import DisplayDishComments from "./DisplayDishComments";
+import ChildrenEx from "./ChildrenEx";
 
 class MyRestaurant extends Component {
   constructor(params) {
@@ -9,29 +10,25 @@ class MyRestaurant extends Component {
 
     //THIS IS THE ONLY MOMENT IN WHICH YOU CAN CHANGE THE STATE VIA this.state = { ... }
     this.state = {
-      selectedDish: null,
-      dishDestroyed: null
+      selectedDish: null
     };
   }
 
   dishSelected = dish => {
-    console.log("Dish selected", dish);
-    this.setState({ selectedDish: dish});
+    this.setState({ selectedDish: dish });
   };
 
   render() {
     return (
       <>
         <RestNavigation name="Strivestaurant" />
-
         <MenuCarousel onDishSelected={this.dishSelected} />
-
         <DisplayDishComments selectedDish={this.state.selectedDish} />
       </>
     );
   }
 
-   updateColumns = colSizeInput => {
+  updateColumns = colSizeInput => {
     //DON'T TRY THIS AT HOME! This update the state but doesn't update the DOM
     //this.state.colSize = colSizeInput.currentTarget.value;
 
