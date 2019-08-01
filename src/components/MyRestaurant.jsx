@@ -3,6 +3,8 @@ import RestNavigation from "./RestNavigation";
 import MenuCarousel from "./MenuCarousel";
 import DisplayDishComments from "./DisplayDishComments";
 import ChildrenEx from "./ChildrenEx";
+import AddReservation from "./AddReservation";
+import ShowReservations from "./ShowReservations";
 
 class MyRestaurant extends Component {
   constructor(params) {
@@ -24,6 +26,10 @@ class MyRestaurant extends Component {
         <RestNavigation name="Strivestaurant" />
         <MenuCarousel onDishSelected={this.dishSelected} />
         <DisplayDishComments selectedDish={this.state.selectedDish} />
+
+        <ShowReservations />
+        <AddReservation />
+        {/* <ChildrenEx /> */}
       </>
     );
   }

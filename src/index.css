@@ -13,3 +13,14 @@ code {
 /* .bg-light {
   background-color: #181818 !important;
 } */
+
+/* .infinite-scroll > .row {
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.infinite-scroll > .row > .col-md-5 {
+  display: inline-block;
+  float: none;
+} */

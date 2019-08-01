@@ -5,7 +5,7 @@ class DisplayDishComments extends Component {
   state = {};
   render() {
     return (
-      <Container>
+      <Container className="my-5">
         {this.props.selectedDish && (
           <ListGroup>
             {this.props.selectedDish.comments.map((comment, index) => {
