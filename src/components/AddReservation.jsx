@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Form, FormGroup, Label, Input, Container, Row, Spinner, Alert } from "reactstrap";
+import { Button, FormGroup, Label, Input, Container, Row, Spinner, Alert } from "reactstrap";
 
 class AddReservation extends React.Component {
   constructor(props) {
@@ -36,6 +36,8 @@ class AddReservation extends React.Component {
         }
       });
       if (response.ok) {
+        this.props.addComment(this.state.reservation);
+
         var json = await response.json();
         this.setState({
           isLoading: false,

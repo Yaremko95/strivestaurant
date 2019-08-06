@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import RestNavigation from "./RestNavigation";
-import MenuCarousel from "./MenuCarousel";
-import DisplayDishComments from "./DisplayDishComments";
-import ChildrenEx from "./ChildrenEx";
 import AddReservation from "./AddReservation";
-import ShowReservations from "./ShowReservations";
+import { Container } from "reactstrap";
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { withRouter } from "react-router";
+import MenuPage from "./MenuPage";
+import HomePage from "./HomePage";
+import DishDetail from "./DishDetail";
 
 class MyRestaurant extends Component {
   constructor(params) {
@@ -21,16 +24,35 @@ class MyRestaurant extends Component {
   };
 
   render() {
-    return (
-      <>
-        <RestNavigation name="Strivestaurant" />
-        <MenuCarousel onDishSelected={this.dishSelected} />
-        <DisplayDishComments selectedDish={this.state.selectedDish} />
+    var RoutedNavigation = withRouter(RestNavigation);
 
-        <ShowReservations />
-        <AddReservation />
-        {/* <ChildrenEx /> */}
-      </>
+    return (
+      <Router>
+        <RoutedNavigation />
+        {/* <RestNavigation name="Strivestaurant" /> */}
+        {/* 
+          Router
+          - For every children component
+          - is this a Route? if so, I'm checking the path and displaying the Component / render only if I match
+          - otherwise do not interfere
+        */}
+
+        <Container className="my-5">
+          <Route path="/" exact component={HomePage} />
+          <Route path="/menu" exact component={MenuPage} />
+          <Route path="/reservation" exact component={AddReservation} />
+          <Route path="/dishdetails/:dishId" component={DishDetail} />
+          {/* <Route
+            path="/notfound"
+            render={() => (
+              <>
+                <MenuPage />
+                <AddReservation />
+              </>
+            )}
+          /> */}
+        </Container>
+      </Router>
     );
   }
 

@@ -52,7 +52,7 @@ class MenuCarousel extends Component {
             style={{ cursor: "pointer" }}
             src={item.image}
             alt={item.name}
-            onClick={() => this.props.onDishSelected(item)}
+            // onClick={() => this.props.onDishSelected(item)}
           />
           <CarouselCaption captionText={item.description} captionHeader={item.name} />
         </CarouselItem>

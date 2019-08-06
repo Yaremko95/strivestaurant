@@ -24,3 +24,11 @@ code {
   display: inline-block;
   float: none;
 } */
+
+.menu-item-description {
+  display: flex;
+  margin-left: 10px;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+}
