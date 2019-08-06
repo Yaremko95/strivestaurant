@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from "reactstrap";
 import items from "../data/menu.json";
+import { Link } from "react-router-dom";
 
 class MenuCarousel extends Component {
   constructor(props) {
@@ -48,12 +49,14 @@ class MenuCarousel extends Component {
     const slides = items.map(item => {
       return (
         <CarouselItem onExiting={this.onExiting} onExited={this.onExited} key={item.id}>
-          <img
-            style={{ cursor: "pointer" }}
-            src={item.image}
-            alt={item.name}
-            // onClick={() => this.props.onDishSelected(item)}
-          />
+          <Link to={"/dishdetails/" + item.id}>
+            <img
+              style={{ cursor: "pointer" }}
+              src={item.image}
+              alt={item.name}
+              // onClick={() => this.props.onDishSelected(item)}
+            />
+          </Link>
           <CarouselCaption captionText={item.description} captionHeader={item.name} />
         </CarouselItem>
       );

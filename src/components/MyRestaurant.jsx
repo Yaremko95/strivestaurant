@@ -42,6 +42,9 @@ class MyRestaurant extends Component {
           <Route path="/menu" exact component={MenuPage} />
           <Route path="/reservation" exact component={AddReservation} />
           <Route path="/dishdetails/:dishId" component={DishDetail} />
+          {/* <Route path="/(food|dishes)" render={MenuPage} /> */}
+
+          {/* <Route path="/michele" render={() => <MenuCarousel click={() => this.setState({ michele: true })} />} /> */}
           {/* <Route
             path="/notfound"
             render={() => (
