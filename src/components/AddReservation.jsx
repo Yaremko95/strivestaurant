@@ -36,7 +36,7 @@ class AddReservation extends React.Component {
         }
       });
       if (response.ok) {
-        this.props.addComment(this.state.reservation);
+        //this.props.addComment(this.state.reservation);
 
         var json = await response.json();
         this.setState({

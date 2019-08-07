@@ -8,6 +8,7 @@ import { withRouter } from "react-router";
 import MenuPage from "./MenuPage";
 import HomePage from "./HomePage";
 import DishDetail from "./DishDetail";
+import AddReservationControlled from "./AddReservationControlled";
 
 class MyRestaurant extends Component {
   constructor(params) {
@@ -40,8 +41,10 @@ class MyRestaurant extends Component {
         <Container className="my-5">
           <Route path="/" exact component={HomePage} />
           <Route path="/menu" exact component={MenuPage} />
-          <Route path="/reservation" exact component={AddReservation} />
+          <Route path="/reservation" exact component={AddReservationControlled} />
+          <Route path="/oldreservation" exact component={AddReservation} />
           <Route path="/dishdetails/:dishId" component={DishDetail} />
+
           {/* <Route path="/(food|dishes)" render={MenuPage} /> */}
 
           {/* <Route path="/michele" render={() => <MenuCarousel click={() => this.setState({ michele: true })} />} /> */}

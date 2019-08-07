@@ -13,8 +13,6 @@ class DishDetail extends React.Component {
   }
 
   render() {
-    console.log(this.props.match.params.dishId);
-
     return (
       <>
         {this.state.dish && (
