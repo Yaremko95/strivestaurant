@@ -32,3 +32,7 @@ code {
   height: 200px;
   justify-content: center;
 }
+
+.form-error-message {
+  color: #951818;
+}
