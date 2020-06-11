@@ -4,7 +4,7 @@ import { Container, Alert, ListGroup, ListGroupItem, Badge } from "reactstrap";
 function DisplayDishComments(props) {
   return (
     <Container className="my-5">
-      {props.selectedDish && (
+      {props.selectedDish ? (
         <ListGroup>
           {props.selectedDish.comments.map((comment, index) => {
             var color = "";
@@ -33,8 +33,7 @@ function DisplayDishComments(props) {
             );
           })}
         </ListGroup>
-      )}
-      {!props.selectedDish && (
+      ) : (
         <Alert color="secondary">
           No dish selected, please click on a Dish to show the comments
         </Alert>
