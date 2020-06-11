@@ -10,7 +10,10 @@ function DishDetail(props) {
     let dishId = props.match.params.dishId;
 
     let temp = items.find((dish) => dish.id.toString() === dishId);
-    setDish(temp);
+    //setDish(temp);
+    setTimeout(() => {
+      setDish(temp);
+    }, 1000);
   }, []);
 
   return (
