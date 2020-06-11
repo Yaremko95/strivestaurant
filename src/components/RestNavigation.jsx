@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 
 //imr => import react
@@ -8,15 +16,15 @@ import { Link } from "react-router-dom";
 class RestNavigation extends Component {
   constructor(props) {
     super(props);
-
+    console.log("components starts render");
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
   render() {
@@ -29,13 +37,19 @@ class RestNavigation extends Component {
           <Link className="navbar-brand" to="/">
             Strivestaurant - Striving For Food
           </Link>
+          {this.props.location.pathname === "/dishdetails/2" && (
+            <span style={{ color: "whitesmoke" }}>"My favorite!"</span>
+          )}
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <Link
                   className={
-                    this.props.location && this.props.location.pathname === "/menu" ? "nav-link active" : "nav-link"
+                    this.props.location &&
+                    this.props.location.pathname === "/menu"
+                      ? "nav-link active"
+                      : "nav-link"
                   }
                   to="/menu"
                 >
@@ -45,7 +59,8 @@ class RestNavigation extends Component {
               <NavItem>
                 <Link
                   className={
-                    this.props.location && this.props.location.pathname === "/reservation"
+                    this.props.location &&
+                    this.props.location.pathname === "/reservation"
                       ? "nav-link active"
                       : "nav-link"
                   }
