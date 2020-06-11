@@ -15,7 +15,7 @@ function DishDetail(props) {
 
   return (
     <>
-      {dish && (
+      {dish ? (
         <>
           <div className="row">
             <div className="col-md-3">
@@ -39,8 +39,9 @@ function DishDetail(props) {
             <DisplayDishComments selectedDish={dish} />
           </div>
         </>
+      ) : (
+        <h1>Loading...</h1>
       )}
-      {!dish && <h1>Loading...</h1>}
     </>
   );
 }
