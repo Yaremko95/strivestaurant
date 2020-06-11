@@ -1,11 +1,11 @@
 import React from "react";
-import { Media, Badge } from "reactstrap";
+import { Media, Badge, Alert } from "reactstrap";
 import { Link } from "react-router-dom";
 
 class SingleDish extends React.Component {
   state = {};
   render() {
-    return (
+    return this.props.dish ? (
       <Media className="my-2">
         <Media left>
           <Link to={"/dishdetails/" + this.props.dish.id}>
@@ -26,6 +26,8 @@ class SingleDish extends React.Component {
           {this.props.dish.description}
         </Media>
       </Media>
+    ) : (
+      <Alert color="secondary">Dish doesn't exist</Alert>
     );
   }
 }
